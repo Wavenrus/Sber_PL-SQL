@@ -2,12 +2,12 @@
 	
 drop TABLE PR_CRED;
  
-CREATE TABLE pr_cred 
+CREATE TABLE PR_CRED 
     ( ID            NUMBER(15)
     , NUM_DOG       VARCHAR2(10)	CONSTRAINT pr_cred_num_dog_nn  NOT NULL
-    , SUMMA_DOG     NUMBER(8,2)
+    , SUMMA_DOG     NUMBER(10,2)
     , DATE_BEGIN    DATE			CONSTRAINT pr_cred_d_begin_nn  NOT NULL
-    , DATE_END      DATE
+    , DATE_END      DATE			CONSTRAINT pr_cred_d_begin_nn  NOT NULL
     , ID_CLIENT     NUMBER(15)		CONSTRAINT pr_cred_id_client_nn  NOT NULL
     , COLLECT_PLAN  NUMBER(15)
     , COLLECT_FACT  NUMBER(15)
@@ -26,7 +26,7 @@ drop TABLE PLAN_OPER;
 CREATE TABLE PLAN_OPER 
     ( COLLECTION_ID NUMBER(15)		CONSTRAINT pl_oper_id_nn  NOT NULL
     , P_DATE    DATE				CONSTRAINT pl_p_date_nn  NOT NULL
-    , P_SUMMA     NUMBER(8,2)		CONSTRAINT pl_p_summa_nn  NOT NULL
+    , P_SUMMA     NUMBER(10,2)		CONSTRAINT pl_p_summa_nn  NOT NULL
     , TYPE_OPER     VARCHAR2(200)	CONSTRAINT pl_type_oper_nn  NOT NULL
     );
 
@@ -35,7 +35,7 @@ drop TABLE FACT_OPER;
 CREATE TABLE FACT_OPER 
     ( COLLECTION_ID NUMBER(15)		CONSTRAINT fa_oper_id_nn  NOT NULL
     , F_DATE    DATE				CONSTRAINT fa_f_date_nn  NOT NULL
-    , F_SUMMA     NUMBER(8,2)		CONSTRAINT fa_f_summa_nn  NOT NULL
+    , F_SUMMA     NUMBER(10,2)		CONSTRAINT fa_f_summa_nn  NOT NULL
     , TYPE_OPER     VARCHAR2(200)	CONSTRAINT fa_type_oper_nn  NOT NULL
     );
   
