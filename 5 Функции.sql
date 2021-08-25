@@ -4,7 +4,7 @@ create or replace function ostatok_to_date (
   in_date IN DATE,
   collect_fact IN NUMBER) RETURN NUMBER
 IS
-  ost_sum NUMBER(8,2);
+  ost_sum NUMBER(10,2);
 BEGIN
     select   issuance_sum - repay_sum as ost_sum
     INTO ost_sum
@@ -34,7 +34,7 @@ create or replace function ost_perc_to_date (
   collect_plan IN NUMBER,
   collect_fact IN NUMBER) RETURN NUMBER
 IS
-  ost_sum_perc NUMBER(8,2);
+  ost_sum_perc NUMBER(10,2);
 BEGIN
     select   p_perc_sum - f_perc_sum as ost_sum_perc
     INTO ost_sum_perc
